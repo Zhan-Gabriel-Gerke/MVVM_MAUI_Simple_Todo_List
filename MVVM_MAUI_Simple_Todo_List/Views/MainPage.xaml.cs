@@ -29,12 +29,4 @@ public partial class MainPage : ContentPage
         // (Не ждем ее завершения, чтобы не блокировать UI)
         _viewModel.LoadItemsCommand.Execute(null);
     }
-    
-    [RelayCommand]
-    async Task GoToSettingsAsync()
-    {
-        // Используем Shell-навигацию по имени роута, 
-        // которое мы задали в AppShell.xaml
-        await Shell.Current.GoToAsync("SettingsPage");
-    }
 }

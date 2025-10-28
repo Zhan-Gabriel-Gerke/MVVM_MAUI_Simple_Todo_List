@@ -21,7 +21,7 @@
                 Command="{Binding SetLanguageEnglishCommand}" />
             <Button
                 Text="Русский"
-                Command="{Binding SetLanguageEnglishCommand}" />
+                Command="{Binding SetLanguageRussianCommand}" />
         </HorizontalStackLayout>
 
         <Label Text="{converters:Translate ThemeLabel}" FontSize="Medium" FontAttributes="Bold" Margin="0,20,0,0" />

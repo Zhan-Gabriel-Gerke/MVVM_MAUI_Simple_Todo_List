@@ -60,7 +60,52 @@ namespace MVVM_MAUI_Simple_Todo_List.Resources.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        internal static string AddButtonText {
+            get {
+                return ResourceManager.GetString("AddButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language:.
+        /// </summary>
+        internal static string LanguageLabel {
+            get {
+                return ResourceManager.GetString("LanguageLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Todo List (SQLite).
+        /// </summary>
+        internal static string MainPageTitle {
+            get {
+                return ResourceManager.GetString("MainPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter task....
+        /// </summary>
+        internal static string PlaceholderText {
+            get {
+                return ResourceManager.GetString("PlaceholderText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        internal static string SettingsPageTitle {
+            get {
+                return ResourceManager.GetString("SettingsPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dark.
         /// </summary>
         internal static string ThemeDark {
             get {
@@ -69,7 +114,7 @@ namespace MVVM_MAUI_Simple_Todo_List.Resources.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Theme:.
         /// </summary>
         internal static string ThemeLabel {
             get {
@@ -78,7 +123,7 @@ namespace MVVM_MAUI_Simple_Todo_List.Resources.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Light.
         /// </summary>
         internal static string ThemeLight {
             get {
@@ -87,7 +132,7 @@ namespace MVVM_MAUI_Simple_Todo_List.Resources.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to System.
         /// </summary>
         internal static string ThemeSystem {
             get {

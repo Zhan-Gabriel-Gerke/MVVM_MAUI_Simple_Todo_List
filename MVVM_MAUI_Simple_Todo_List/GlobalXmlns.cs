@@ -1,0 +1,2 @@
+[assembly: XmlnsDefinition("http://schemas.microsoft.com/dotnet/maui/global", "MVVM_MAUI_Simple_Todo_List")]
+[assembly: XmlnsDefinition("http://schemas.microsoft.com/dotnet/maui/global", "MVVM_MAUI_Simple_Todo_List.Pages")]

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using MVVM_MAUI_Simple_Todo_List.Services;
 using MVVM_MAUI_Simple_Todo_List.ViewModels;
 
 namespace MVVM_MAUI_Simple_Todo_List;
@@ -12,6 +13,7 @@ public static class MauiProgram
             .UseMauiApp<App>()
             .ConfigureFonts(fonts =>
             {
+                builder.Services.AddSingleton<DatabaseService>();
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 builder.Services.AddSingleton<MainPage>();

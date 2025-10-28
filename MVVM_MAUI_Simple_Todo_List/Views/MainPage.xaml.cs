@@ -9,10 +9,23 @@ namespace MVVM_MAUI_Simple_Todo_List.Views;
 
 public partial class MainPage : ContentPage
 {
-    // Мы "внедряем" ViewModel через конструктор
+    // Нам нужна ссылка на ViewModel, чтобы вызвать его метод
+    private readonly MainPageViewModel _viewModel;
+
     public MainPage(MainPageViewModel vm)
     {
         InitializeComponent();
-        BindingContext = vm; // Устанавливаем DataContext (контекст привязки)
+        BindingContext = vm;
+        _viewModel = vm; // Сохраняем ссылку
+    }
+
+    // Этот метод вызывается каждый раз, когда страница становится видимой
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+            
+        // Запускаем команду загрузки данных
+        // (Не ждем ее завершения, чтобы не блокировать UI)
+        _viewModel.LoadItemsCommand.Execute(null);
     }
 }

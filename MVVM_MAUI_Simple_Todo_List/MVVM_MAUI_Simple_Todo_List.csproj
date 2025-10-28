@@ -68,7 +68,45 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Resources\Localization\" />
+      <EmbeddedResource Update="Resources\Localization\AppStrings.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>AppStrings.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Localization\AppStrings.et.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>AppStrings.et.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Localization\AppStrings.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>AppStrings.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Localization\AppStrings.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>AppStrings.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Resources\Localization\AppStrings.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>AppStrings.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Localization\AppStrings.et.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>AppStrings.et.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Localization\AppStrings.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>AppStrings.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Localization\AppStrings.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>AppStrings.resx</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>

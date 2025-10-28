@@ -94,4 +94,11 @@ public partial class MainPageViewModel : BaseViewModel
             // Обновляем запись в БД
             await _databaseService.SaveItemAsync(item);
         }
+        [RelayCommand]
+        async Task GoToSettingsAsync()
+        {
+            // Используем Shell-навигацию по имени роута, 
+            // которое мы задали в AppShell.xaml
+            await Shell.Current.GoToAsync("SettingsPage");
+        }
     }

@@ -99,6 +99,6 @@ public partial class MainPageViewModel : BaseViewModel
         {
             // Используем Shell-навигацию по имени роута, 
             // которое мы задали в AppShell.xaml
-            await Shell.Current.GoToAsync("SettingsPage");
+            await Shell.Current.GoToAsync("///SettingsPage");
         }
     }

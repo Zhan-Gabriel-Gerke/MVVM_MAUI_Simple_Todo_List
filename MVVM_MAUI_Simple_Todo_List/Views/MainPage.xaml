@@ -25,10 +25,10 @@
                 HorizontalOptions="FillAndExpand" />
             <Button
                 Text="{converters:Translate AddButtonText}"
-                Command="{Binding AddItemAsyncCommand}" />
+                Command="{Binding AddItemCommand}" />
         </HorizontalStackLayout>
 
-        <ActivityIndicator IsRunning="{Binding IsBusy}" />
+        <ActivityIndicator IsRunning="{Binding IsBusy}" /> 
 
         <CollectionView ItemsSource="{Binding Items}">
             <CollectionView.ItemTemplate>
@@ -39,7 +39,7 @@
                         <CheckBox IsChecked="{Binding IsDone}">
                             <CheckBox.GestureRecognizers>
                                 <TapGestureRecognizer
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:MainPageViewModel}}, Path=ToggleDoneAsyncCommand}"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:MainPageViewModel}}, Path=ToggleDoneCommand}"
                                     CommandParameter="{Binding .}" />
                             </CheckBox.GestureRecognizers>
                         </CheckBox>
@@ -51,7 +51,7 @@
 
                         <Button Grid.Column="2" 
                                 Text="X"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:MainPageViewModel}}, Path=DeleteItemAsyncCommand}"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:MainPageViewModel}}, Path=DeleteItemCommand}"
                                 CommandParameter="{Binding .}"/>
                     </Grid>
                 </DataTemplate>

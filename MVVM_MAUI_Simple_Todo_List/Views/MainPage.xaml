@@ -26,7 +26,7 @@
             
             <Button
                 Text="{converters:Translate AddButtonText}"
-                Command="{Binding AddItemCommand}" />
+                Command="{Binding a}" />
         </HorizontalStackLayout>
 
         <ActivityIndicator IsRunning="{Binding IsBusy}" />

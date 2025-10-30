@@ -10,6 +10,7 @@ public partial class MainPageViewModel : BaseViewModel
     {
         private readonly DatabaseService _databaseService;
         private readonly AudioService _audioService;
+        private TodoItem? _draggedItem;
 
         // Теперь у нас список объектов TodoItem, а не строк
         public ObservableCollection<TodoItem> Items { get; } = new ObservableCollection<TodoItem>();
@@ -24,7 +25,45 @@ public partial class MainPageViewModel : BaseViewModel
             _audioService = audioService;
             Title = "Список Задач (SQLite)";
         }
+            
+        
+        [RelayCommand]
+        void ItemDragStarting(TodoItem item)
+        {
+            // Сохраняем, какой элемент мы тащим
+            _draggedItem = item;
+        }
 
+// Команда #2: Вызывается, когда пользователь БРОСАЕТ элемент на новый
+        [RelayCommand]
+        void ItemDropped(TodoItem targetItem)
+        {
+            if (_draggedItem == null || targetItem == null || _draggedItem.Equals(targetItem))
+                return;
+
+            // --- Логика смены порядка ---
+    
+            // 1. Находим старую и новую позиции
+            int oldIndex = Items.IndexOf(_draggedItem);
+            int newIndex = Items.IndexOf(targetItem);
+
+            if (oldIndex == -1 || newIndex == -1)
+                return;
+
+            // 2. Удаляем элемент со старой позиции...
+            Items.RemoveAt(oldIndex);
+    
+            // 3. ...и вставляем его на новую
+            // (Используем Insert, а не Add, чтобы вставить в конкретное место)
+            Items.Insert(newIndex, _draggedItem);
+
+            // Очищаем перетаскиваемый элемент
+            _draggedItem = null;
+    
+            // (Примечание: для сохранения этого порядка в БД 
+            // потребовалась бы доп. логика, например, поле 'SortOrder' в TodoItem.
+            // Для простоты мы меняем порядок только в ObservableCollection на экране.)
+        }
         // Новый метод для загрузки данных из БД
         // Мы будем вызывать его при запуске страницы
         [RelayCommand]

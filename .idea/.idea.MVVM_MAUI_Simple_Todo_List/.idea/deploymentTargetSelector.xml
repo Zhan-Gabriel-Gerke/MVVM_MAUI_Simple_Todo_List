@@ -4,7 +4,7 @@
     <selectionStates>
       <SelectionState runConfigName="MVVM_MAUI_Simple_Todo_List">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-10-28T14:32:55.967405300Z">
+        <DropdownSelection timestamp="2025-10-30T12:15:42.533587700Z">
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\zange\.android\avd\pixel_7_-_api_35.avd" />

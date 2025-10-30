@@ -1,6 +1,7 @@
 ﻿// Файл: ViewModels/SettingsViewModel.cs
 using CommunityToolkit.Mvvm.Input;
 using System.Globalization;
+using MVVM_MAUI_Simple_Todo_List.Models;
 using MVVM_MAUI_Simple_Todo_List.Services;
 using MVVM_MAUI_Simple_Todo_List.ViewModels;
 using MVVM_MAUI_Simple_Todo_List.Services; // Для доступа к сервисам
@@ -27,7 +28,9 @@ namespace MVVM_MAUI_Simple_Todo_List.ViewModels
         }
 
         // --- Команды Языка (Шаг 4) ---
-
+        
+        
+        
         [RelayCommand]
         void SetLanguageEstonian()
         {

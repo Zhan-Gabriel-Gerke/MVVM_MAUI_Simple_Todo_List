@@ -23,23 +23,35 @@
                 Placeholder="{converters:Translate PlaceholderText}"
                 Text="{Binding NewItemText}"
                 HorizontalOptions="FillAndExpand" />
+            
             <Button
                 Text="{converters:Translate AddButtonText}"
                 Command="{Binding AddItemCommand}" />
         </HorizontalStackLayout>
 
-        <ActivityIndicator IsRunning="{Binding IsBusy}" /> 
+        <ActivityIndicator IsRunning="{Binding IsBusy}" />
 
-        <CollectionView ItemsSource="{Binding Items}">
+        <CollectionView ItemsSource="{Binding Items}"
+                        CanDrag="True"
+                        CanDrop="True"
+                        DropCommand="{Binding ItemDroppedCommand}">
+            
             <CollectionView.ItemTemplate>
                 
                 <DataTemplate x:DataType="models:TodoItem">
+                    
                     <Grid Padding="10" ColumnDefinitions="Auto,*,Auto">
-                        
+                        <Grid.GestureRecognizers>
+                            <DragGestureRecognizer
+                                CanDrag="True"
+                                DragStartingCommand="{Binding Source={RelativeSource AncestorType={x:Type viewModels:MainPageViewModel}}, Path=ItemDragStartingCommand}"
+                                DragStartingCommandParameter="{Binding .}" />
+                        </Grid.GestureRecognizers>
+
                         <CheckBox IsChecked="{Binding IsDone}">
                             <CheckBox.GestureRecognizers>
                                 <TapGestureRecognizer
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:MainPageViewModel}}, Path=ToggleDoneCommand}"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:MainPageViewModel}}, Path=ToggleDoneAsyncCommand}"
                                     CommandParameter="{Binding .}" />
                             </CheckBox.GestureRecognizers>
                         </CheckBox>
@@ -51,7 +63,7 @@
 
                         <Button Grid.Column="2" 
                                 Text="X"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:MainPageViewModel}}, Path=DeleteItemCommand}"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:MainPageViewModel}}, Path=DeleteItemAsyncCommand}"
                                 CommandParameter="{Binding .}"/>
                     </Grid>
                 </DataTemplate>

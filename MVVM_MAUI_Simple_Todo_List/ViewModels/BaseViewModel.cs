@@ -8,12 +8,11 @@ public partial class BaseViewModel : ObservableObject
     // автоматически создать свойство IsBusy
     // и связанный с ним метод OnIsBusyChanged().
     [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(IsNotBusy))] // Сообщить, что IsNotBusy тоже изменилось
+    [NotifyPropertyChangedFor(nameof(IsNotBusy))]
     bool isBusy;
 
     [ObservableProperty]
     string title;
-
-    // Это свойство-помощник, полезное для кнопок
+    
     public bool IsNotBusy => !IsBusy;
 }

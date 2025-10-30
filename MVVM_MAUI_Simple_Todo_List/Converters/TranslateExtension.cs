@@ -9,9 +9,6 @@ public class TranslateExtension : IMarkupExtension<BindingBase>
 
     public BindingBase ProvideValue(IServiceProvider serviceProvider)
     {
-        // Мы создаем хитрую привязку:
-        // 1. Источник: Наш статический сервис LocalizationService.Current
-        // 2. Путь: Индексатор [Key], который мы передали
         return new Binding
         {
             Mode = BindingMode.OneWay,

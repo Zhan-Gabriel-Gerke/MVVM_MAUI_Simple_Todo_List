@@ -8,20 +8,16 @@ namespace MVVM_MAUI_Simple_Todo_List.Models
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
+        
+        private string _text; //Value
 
-        // --- ИСПРАВЛЕНИЕ: Определяем свойство Text вручную ---
-        private string _text; // Приватное поле для хранения значения
-
-        [MaxLength(250)] // Атрибут SQLite теперь применяется к свойству
+        [MaxLength(250)] // SQLite
         public string Text
         {
             get => _text;
-            // Используем SetProperty из ObservableObject для уведомления
             set => SetProperty(ref _text, value);
         }
-        // ---------------------------------------------------
-
-        // IsDone оставляем с [ObservableProperty], т.к. ему не нужны атрибуты SQLite
+        
         [ObservableProperty]
         bool isDone;
     }

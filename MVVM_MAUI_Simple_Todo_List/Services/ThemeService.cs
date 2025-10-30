@@ -3,25 +3,23 @@
 public class ThemeService
 {
     private readonly SettingsService _settingsService;
-
-    // Внедряем SettingsService
+    
     public ThemeService(SettingsService settingsService)
     {
         _settingsService = settingsService;
     }
 
-    // Метод для применения темы
+    // theme apply
     public void SetTheme(AppTheme theme)
     {
         if (Application.Current != null)
         {
             Application.Current.UserAppTheme = theme;
         }
-        // Сохраняем выбор
         _settingsService.AppTheme = theme;
     }
 
-    // Метод для загрузки темы при старте
+    // default theme
     public void InitializeTheme()
     {
         if (Application.Current != null)

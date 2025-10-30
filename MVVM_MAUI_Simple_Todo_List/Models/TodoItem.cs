@@ -1,5 +1,4 @@
-﻿// Файл: Models/TodoItem.cs
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using SQLite;
 
 namespace MVVM_MAUI_Simple_Todo_List.Models

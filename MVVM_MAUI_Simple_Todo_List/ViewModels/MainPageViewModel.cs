@@ -9,6 +9,7 @@ namespace MVVM_MAUI_Simple_Todo_List.ViewModels;
 public partial class MainPageViewModel : BaseViewModel
     {
         private readonly DatabaseService _databaseService;
+        private readonly AudioService _audioService;
 
         // Теперь у нас список объектов TodoItem, а не строк
         public ObservableCollection<TodoItem> Items { get; } = new ObservableCollection<TodoItem>();
@@ -17,9 +18,10 @@ public partial class MainPageViewModel : BaseViewModel
         string newItemText;
 
         // Внедряем сервис БД через конструктор
-        public MainPageViewModel(DatabaseService databaseService)
+        public MainPageViewModel(DatabaseService databaseService, AudioService audioService)
         {
             _databaseService = databaseService;
+            _audioService = audioService;
             Title = "Список Задач (SQLite)";
         }
 
@@ -68,6 +70,7 @@ public partial class MainPageViewModel : BaseViewModel
             Items.Add(newItem);
             
             NewItemText = string.Empty;
+            await _audioService.PlayAddSoundAsync();
         }
 
         // Команда удаления (теперь принимает TodoItem)

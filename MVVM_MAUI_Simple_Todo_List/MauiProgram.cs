@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using MVVM_MAUI_Simple_Todo_List.Services;
 using MVVM_MAUI_Simple_Todo_List.ViewModels;
 using MVVM_MAUI_Simple_Todo_List.Views;
+using Plugin.Maui.Audio;
 
 namespace MVVM_MAUI_Simple_Todo_List;
 
@@ -25,11 +26,12 @@ public static class MauiProgram
         builder.Services.AddSingleton<SettingsService>();
         builder.Services.AddSingleton<ThemeService>();
         builder.Services.AddSingleton<LocalizationService>();
+        builder.Services.AddSingleton(AudioManager.Current);
+        builder.Services.AddSingleton<AudioService>();
 
         // --- Регистрация Страниц и ViewModel ---
         builder.Services.AddSingleton<MainPage>();
         builder.Services.AddSingleton<MainPageViewModel>();
-
         builder.Services.AddTransient<SettingsPage>();
         builder.Services.AddTransient<SettingsViewModel>();
 

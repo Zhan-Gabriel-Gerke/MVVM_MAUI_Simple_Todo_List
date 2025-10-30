@@ -1,5 +1,4 @@
-﻿// Файл: MauiProgram.cs
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using MVVM_MAUI_Simple_Todo_List.Services;
 using MVVM_MAUI_Simple_Todo_List.ViewModels;
 using MVVM_MAUI_Simple_Todo_List.Views;
@@ -16,12 +15,11 @@ public static class MauiProgram
             .UseMauiApp<App>()
             .ConfigureFonts(fonts =>
             {
-                // <-- ИСПРАВЛЕНИЕ: Внутри ConfigureFonts - ТОЛЬКО шрифты
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
 
-        // --- ИСПРАВЛЕНИЕ: Регистрация сервисов должна быть здесь ---
+        // --- Регистрация сервисов ---
         builder.Services.AddSingleton<DatabaseService>();
         builder.Services.AddSingleton<SettingsService>();
         builder.Services.AddSingleton<ThemeService>();
@@ -39,21 +37,16 @@ public static class MauiProgram
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
-
-        // --- ИСПРАВЛЕНИЕ: Инициализация настроек (Шаг 5) ---
         
-        // 1. Сначала собираем приложение
         var app = builder.Build();
 
-        // 2. Получаем сервисы из контейнера
+        // --- Инициализация Настроек ---
         var themeService = app.Services.GetRequiredService<ThemeService>();
         var localizationService = app.Services.GetRequiredService<LocalizationService>();
-
-        // 3. Применяем сохраненные настройки
+        
         themeService.InitializeTheme();
         localizationService.InitializeLanguage();
 
-        // 4. Возвращаем готовое приложение
         return app;
     }
 }

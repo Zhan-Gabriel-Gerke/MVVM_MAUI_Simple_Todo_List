@@ -107,11 +107,6 @@
         <AutoGen>True</AutoGen>
         <DependentUpon>AppStrings.resx</DependentUpon>
       </Compile>
-      <Compile Remove="MainPage.xaml.cs" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <MauiXaml Remove="MainPage.xaml" />
     </ItemGroup>
 
 </Project>

@@ -66,7 +66,7 @@
 
                         <Button Grid.Column="2" 
                                 Text="X"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:MainPageViewModel}}, Path=AddItemCommand}"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:MainPageViewModel}}, Path=DeleteItemCommand}"
                                 CommandParameter="{Binding .}"/>
                     </Grid>
                 </DataTemplate>

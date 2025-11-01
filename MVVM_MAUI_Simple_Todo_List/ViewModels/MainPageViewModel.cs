@@ -15,7 +15,7 @@ public partial class MainPageViewModel : BaseViewModel
         public ObservableCollection<TodoItem> Items { get; } = new ObservableCollection<TodoItem>();
 
         [ObservableProperty]
-        string newItemText;
+        string newItemText = string.Empty;
         
         public MainPageViewModel(DatabaseService databaseService, AudioService audioService)
         {

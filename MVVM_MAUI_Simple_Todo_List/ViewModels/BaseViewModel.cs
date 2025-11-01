@@ -8,11 +8,9 @@ public partial class BaseViewModel : ObservableObject
     // автоматически создать свойство IsBusy
     // и связанный с ним метод OnIsBusyChanged().
     [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(IsNotBusy))]
-    bool isBusy;
-
-    [ObservableProperty]
-    string title;
-    
-    public bool IsNotBusy => !IsBusy;
+        [NotifyPropertyChangedFor(nameof(IsNotBusy))]
+        bool isBusy;
+        [ObservableProperty]
+        string title = string.Empty; // Инициализировано
+        public bool IsNotBusy => !IsBusy;
 }

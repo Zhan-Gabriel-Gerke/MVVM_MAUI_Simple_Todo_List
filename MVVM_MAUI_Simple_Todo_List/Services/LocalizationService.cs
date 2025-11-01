@@ -1,18 +1,17 @@
 ﻿using System.ComponentModel;
 using System.Globalization;
 using CommunityToolkit.Mvvm.Input;
-using System.Globalization;
 using MVVM_MAUI_Simple_Todo_List.Resources.Localization;
 namespace MVVM_MAUI_Simple_Todo_List.Services;
 
 public class LocalizationService : INotifyPropertyChanged
 {
-    public event PropertyChangedEventHandler PropertyChanged;
+    public event PropertyChangedEventHandler? PropertyChanged;
     
     private readonly SettingsService _settingsService;
-    public static LocalizationService Current { get; private set; }
+    public static LocalizationService Current { get; private set; } = null!;
     
-    public string this[string key] => AppStrings.ResourceManager.GetString(key, AppStrings.Culture);
+    public string this[string key] => AppStrings.ResourceManager.GetString(key, AppStrings.Culture) ?? string.Empty;
     
     public LocalizationService(SettingsService settingsService)
     {

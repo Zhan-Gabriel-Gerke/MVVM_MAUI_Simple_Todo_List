@@ -5,7 +5,7 @@ namespace MVVM_MAUI_Simple_Todo_List.Converters;
 [ContentProperty(nameof(Key))]
 public class TranslateExtension : IMarkupExtension<BindingBase>
 {
-    public string Key { get; set; } // Имя строки (ключ) из .resx
+    public string Key { get; set; } = string.Empty;
 
     public BindingBase ProvideValue(IServiceProvider serviceProvider)
     {

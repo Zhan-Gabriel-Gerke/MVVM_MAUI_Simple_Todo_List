@@ -8,8 +8,8 @@ namespace MVVM_MAUI_Simple_Todo_List.Models
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        
-        private string _text; //Value
+
+        private string _text = string.Empty; //Value
 
         [MaxLength(250)] // SQLite
         public string Text

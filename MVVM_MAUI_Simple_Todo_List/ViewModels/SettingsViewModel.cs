@@ -3,7 +3,6 @@ using System.Globalization;
 using MVVM_MAUI_Simple_Todo_List.Models;
 using MVVM_MAUI_Simple_Todo_List.Services;
 using MVVM_MAUI_Simple_Todo_List.ViewModels;
-using MVVM_MAUI_Simple_Todo_List.Services;
 
 namespace MVVM_MAUI_Simple_Todo_List.ViewModels
 {

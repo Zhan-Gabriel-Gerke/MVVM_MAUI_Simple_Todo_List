@@ -1,63 +1,63 @@
 MVVM MAUI Simple Todo List
-Это простой кроссплатформенный список задач (Todo List), созданный на .NET MAUI. Проект демонстрирует использование паттерна MVVM, хранение данных в локальной базе данных SQLite, а также реализацию дополнительных функций, таких как локализация и смена тем.
+This is a simple cross-platform Todo List application built with .NET MAUI. The project demonstrates the use of the MVVM pattern, storing data in a local SQLite database, and the implementation of additional features like localization and theme switching.
 
-✨ Возможности
-Управление задачами:
+✨ Features
+Task Management:
 
-Добавление новых задач.
+Adding new tasks.
 
-Удаление существующих задач.
+Deleting existing tasks.
 
-Отметка задач как выполненных (с визуальным зачеркиванием текста).
+Marking tasks as completed (with visual strikethrough text).
 
-Локальное хранилище:
+Local Storage:
 
-Все задачи сохраняются в локальную базу данных SQLite (todo.db3), что обеспечивает их сохранность между сессиями.
+All tasks are saved to a local SQLite database (todo.db3), ensuring persistence between sessions.
 
 Drag & Drop:
 
-Возможность изменять порядок задач в списке путем перетаскивания.
+Ability to reorder tasks in the list by dragging and dropping.
 
-Персонализация (на странице "Настройки"):
+Personalization (on the "Settings" page):
 
-Смена темы: Выбор между светлой, темной и системной темой оформления.
+Theme Switching: Choose between light, dark, and system default themes.
 
-Локализация: Поддержка трех языков: английский (en-US), эстонский (et-EE) и русский (ru-RU).
+Localization: Support for three languages: English (en-US), Estonian (et-EE), and Russian (ru-RU).
 
-Аудио:
+Audio:
 
-Воспроизведение звукового эффекта (motivation.mp3) при добавлении новой задачи.
+Plays a sound effect (motivation.mp3) when a new task is added.
 
-🛠️ Технологии и архитектура
-Фреймворк: .NET MAUI (проект настроен для Android, iOS, MacCatalyst и Windows).
+🛠️ Technology and Architecture
+Framework: .NET MAUI (project configured for Android, iOS, MacCatalyst, and Windows).
 
-Паттерн: MVVM (Model-View-ViewModel) с использованием CommunityToolkit.Mvvm.
+Pattern: MVVM (Model-View-ViewModel) using CommunityToolkit.Mvvm.
 
-База данных: Локальное хранилище SQLite с использованием sqlite-net-pcl.
+Database: Local SQLite storage using sqlite-net-pcl.
 
-Аудио: Plugin.Maui.Audio для кроссплатформенного воспроизведения звука.
+Audio: Plugin.Maui.Audio for cross-platform audio playback.
 
-Внедрение зависимостей (DI): Используется для регистрации и внедрения сервисов во ViewModels.
+Dependency Injection (DI): Used to register and inject services into ViewModels.
 
-📂 Структура проекта
-Проект организован в соответствии с паттерном MVVM:
+📂 Project Structure
+The project is organized according to the MVVM pattern:
 
-/Models: Содержит классы моделей данных (TodoItem.cs).
+/Models: Contains data model classes (TodoItem.cs).
 
-/Views: Содержит XAML-страницы пользовательского интерфейса (MainPage.xaml, SettingsPage.xaml).
+/Views: Contains user interface XAML pages (MainPage.xaml, SettingsPage.xaml).
 
-/ViewModels: Содержит логику представления и состояние (MainPageViewModel.cs, SettingsViewModel.cs).
+/ViewModels: Contains presentation logic and state (MainPageViewModel.cs, SettingsViewModel.cs).
 
-/Services: Содержит бизнес-логику и сервисы:
+/Services: Contains business logic and services:
 
-DatabaseService.cs: Управляет всеми операциями с SQLite.
+DatabaseService.cs: Manages all SQLite operations.
 
-ThemeService.cs: Управляет применением тем (светлая/темная).
+ThemeService.cs: Manages the application of themes (light/dark).
 
-LocalizationService.cs: Управляет загрузкой строк локализации.
+LocalizationService.cs: Manages loading localization strings.
 
-SettingsService.cs: Хранит настройки пользователя (выбранная тема и язык).
+SettingsService.cs: Stores user settings (selected theme and language).
 
-AudioService.cs: Отвечает за воспроизведение звуков.
+AudioService.cs: Responsible for playing sounds.
 
-/Resources: Ресурсы приложения, включая шрифты, изображения, стили и файлы локализации.
+/Resources: Application resources, including fonts, images, styles, and localization files.

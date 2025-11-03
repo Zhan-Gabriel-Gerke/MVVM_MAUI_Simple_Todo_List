@@ -21,7 +21,7 @@ public partial class MainPageViewModel : BaseViewModel
         {
             _databaseService = databaseService;
             _audioService = audioService;
-            Title = "Список Задач (SQLite)";
+            Title = "To do list";
         }
             
         
